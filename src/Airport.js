@@ -5,6 +5,7 @@ function Airport(weather = new Weather()){
 };
 Airport.prototype.landPlane = function(plane){
   if(this.weather.storm) { throw("Too stormy to land")}
+  if(this.hanger.length >= this.capacity) { throw('Unable to land; no hangar space!'); }
   this.hanger.push(plane)
 };
 Airport.prototype.takeOffPlane = function(plane){
