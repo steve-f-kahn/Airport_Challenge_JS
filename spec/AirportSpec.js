@@ -1,11 +1,12 @@
 describe("Airport", function(){
 
   var airport
-  var plane
+  var plane, secondPlane;
 
   beforeEach(function(){
     airport = new Airport(new Weather(90))
     plane = "plane"
+    secondPlane = "plane2"
   })
 
   it("Allows a plane to land when sunny", function(){
@@ -29,4 +30,15 @@ describe("Airport", function(){
     airport.updateWeather(new Weather(99));
     expect(function(){airport.takeOffPlane(plane)}).toThrow("Too stormy to take off");
   });
+
+  it('is created with a default capacity', function() {
+    expect(airport.capacity).toEqual(1);
+  });
+
+  // it('prevents landing the airport is full', function() {
+  //   airport.landPlane(plane);
+  //   airport.landPlane(secondPlane);
+  //   expect(airport.)
+  // });
+
 });
