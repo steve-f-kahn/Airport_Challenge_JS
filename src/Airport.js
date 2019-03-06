@@ -1,7 +1,7 @@
-function Airport(weather = new Weather()){
+function Airport(weather = new Weather(), capacity = 1){
   this.weather = weather
   this.hanger = []
-  this.capacity = 1;
+  this.capacity = capacity;
 };
 Airport.prototype.landPlane = function(plane){
   if(this.weather.storm) { throw("Too stormy to land")}
