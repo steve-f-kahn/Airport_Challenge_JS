@@ -35,10 +35,9 @@ describe("Airport", function(){
     expect(airport.capacity).toEqual(1);
   });
 
-  // it('prevents landing the airport is full', function() {
-  //   airport.landPlane(plane);
-  //   airport.landPlane(secondPlane);
-  //   expect(airport.)
-  // });
+  it('prevents landing the airport is full', function() {
+    airport.landPlane(plane);
+    expect(function() { airport.airport.landPlane(secondPlane) }).toThrow("Unable to land; no hangar space!");
+  });
 
 });
